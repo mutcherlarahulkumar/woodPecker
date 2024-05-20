@@ -2,10 +2,15 @@ import { SideBarAtom } from "../store/atoms/SideBarAtom";
 import { useRecoilState, useRecoilValue } from 'recoil';
 import DropDownButton from "../components/DropDownButton";
 import DetailedMenu from "../components/DetailedMenu";
+import SideBar from "../components/SideBar"
+import DashBoard from "../components/DashBoard"
 
 export default function MainPage(){
     const sidebarToggle = useRecoilValue(SideBarAtom);
-    return <div className={`${sidebarToggle ? "":"ml-60"}  my-6 px-3`}>
+    return <div>
+        <SideBar />
+        <DashBoard />
+        <div className={`${sidebarToggle ? "":"ml-60"}  my-6 px-3`}>
         <div className="flex justify-between w-full">
             <DropDownButton option={"Property Type"} options={["Appartment","Villa","independent House"]} />
             <DropDownButton option={"Property Size"} options={["1 BHK","2 BHK","3 BHK","4 BHK","5 BHK"]} />
@@ -29,5 +34,6 @@ export default function MainPage(){
         <div>
             <DetailedMenu />
         </div>
+    </div>
     </div>
 }

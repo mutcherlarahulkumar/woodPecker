@@ -10,9 +10,6 @@ import {
   Routes,
 } from "react-router-dom";
 import MainPage from './pages/MainPage'
-import SideBar from "../src/components/SideBar"
-import DashBoard from "../src/components/DashBoard"
-import { useState } from "react"
 import Products from './components/Products'
 import Projects from './components/Projects'
 import Blogs from './components/Blogs'
@@ -24,8 +21,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <SideBar />
-        <DashBoard />
         <Routes>
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/signin" element={<SigninPage />} />
